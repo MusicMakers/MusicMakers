@@ -2,7 +2,9 @@
 title: MusicMakers Readme
 layout: post
 author: MusicMakers
-permalink: /musicmakers-readme/
+permalink: https://docs.google.com/document/d/1ibLBYhWZTW0mX0cEHLhvqKe1cPpWKY1XwfyqrdN73No/edit?usp=sharing
+tags:
+- created using gabriel - the markdown angel
 source-id: 1ibLBYhWZTW0mX0cEHLhvqKe1cPpWKY1XwfyqrdN73No
 published: true
 ---
