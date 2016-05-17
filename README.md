@@ -8,8 +8,6 @@ published: true
 ---
 # **Team name: MusicMakers**
 
-** **
-
 **Student names: Kenneth Tan Xin You / Yong Jia Wern**
 
 ** **
