@@ -1,8 +1,7 @@
 ---
 title: Readme
 layout: post
-author: kennethtxytqw
-permalink: /untitled-document/
+author: MusicMakers
 source-id: 1ibLBYhWZTW0mX0cEHLhvqKe1cPpWKY1XwfyqrdN73No
 published: true
 ---
