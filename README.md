@@ -16,7 +16,7 @@ published: true
 
 **Scope of our project:**
 
- 
+  
 
 Takes in a piece of music without lyrics and generates a new piece of music
 
@@ -26,7 +26,7 @@ Anybody who has a working browser and a piece of music
 
 **Brief Description:**
 
- 
+  
 
 We plan to create a web application that enables users to generate their own music content with the click of a button.
 
@@ -50,6 +50,8 @@ Planned features:
 
 **Execution Plan:**
 
+** **
+
 We will be using the markov process to derive the new song with markov model generated from the inputs. As for the keys in the markov model, we thought of using chords, notes, or just segments of predetermined duration. As we research more about audio files, we realise that they are mostly in binary format. A mp3 file is divided into small blocks (frame) of constant length 0.026 sec. Initially, we thought of using these frames as the key. But Jia Wern come across the Jmusic library which may better assist us in processing the audio file. Thus, we have not decided which will be the better approach, more discussion is required here.
 
 Stacks considered: Spring framework, Jmusic, App.js, Gulp
@@ -57,6 +59,8 @@ Stacks considered: Spring framework, Jmusic, App.js, Gulp
  
 
 **Proposed Level of Achievement:**
+
+** **
 
 Advanced - Apollo 11
 
