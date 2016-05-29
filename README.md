@@ -16,7 +16,7 @@ published: true
 
 **Scope of our project:**
 
-  
+**  **
 
 Takes in a piece of music without lyrics and generates a new piece of music
 
@@ -26,7 +26,7 @@ Anybody who has a working browser and a piece of music
 
 **Brief Description:**
 
-  
+**  **
 
 We plan to create a web application that enables users to generate their own music content with the click of a button.
 
