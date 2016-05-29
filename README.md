@@ -32,13 +32,13 @@ We plan to create a web application that enables users to generate their own mus
 
  
 
-The idea is simple. Using our application, users have to first select a song of their choice and input it into our programme. Then, all users have to do is just click a button that is on the website, and users will be able to obtain a completely new piece of music that will be generated based on the music the users input.
+The idea is simple. Using our application, users will select songs of his/her choice and input it into our programme. Then with just click of a button, a completely new piece of song will be generated based on the songs the user's input.
 
  
 
 Features:
 
-    	1) 	Generating music content based on user input.
+    	1) 	Generating music content based on user's input.
 
  
 
@@ -47,6 +47,16 @@ Planned features:
     	1) 	Extending music input to music that has lyrics.
 
     	2) 	Ability to share music generated on popular social media websites (Facebook, Twitter, etc.)
+
+**Execution Plan:**
+
+We will be using the markov process to derive the new song with markov model generated from the inputs. As for the keys in the markov model, we thought of using chords, notes, or just segments of predetermined duration. As we research more about audio files, we realise that they are mostly in binary format. A mp3 file is divided into small blocks (frame) of constant length 0.026 sec. Initially, we thought of using these frames as the key. But Jia Wern come across the Jmusic library which may better assist us in processing the audio file. Thus, we have not decided which will be the better approach, more discussion is required here.
+
+Stacks considered:Spring framework
+
+JmusicApp.js
+
+Gulp
 
  
 
