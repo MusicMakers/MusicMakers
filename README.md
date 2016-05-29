@@ -58,8 +58,6 @@ Stacks considered: Spring framework, Jmusic, App.js, Gulp
 
 ** **
 
-**  **
-
 **Proposed Level of Achievement:**
 
  
