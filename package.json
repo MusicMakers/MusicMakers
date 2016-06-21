@@ -1,10 +1,14 @@
 {
   "name": "Express-web-app",
   "version": "1.0.0",
-  "dependencies":
-  {
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.4.2",
     "express": "~4.0.0",
-    "mysql": "*",
-    "ejs": "~1.0.0"
+    "express-session": "^1.13.0",
+    "jquery": "^3.0.0",
+    "morgan": "^1.7.0",
+    "mysql": "*"
   }
 }
