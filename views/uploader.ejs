@@ -1,8 +1,27 @@
-<div class='container' style="display:none">
-	<form>
-		<input type='file' name='files' multiple=""/> 
-		<br></br>
-		<input type='submit' name='upload' value='I am done!'/>
-		<input type="hidden" name="MAX_FILE_SIZE" value="500000000" />
+<div name ="uploader" style="display:none">
+	<form class="">
+		<button class='btn btn-lg btn-default' name="upload_btn"> Pick your muse </button>
+		<input type='file' id='upload_files' multiple="" style="display:none"/>
+		<button class='btn btn-lg btn-default' type='submit' name='upload'> I am done </button>		
 	</form>
+	<table class="table table-inverse">
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>File Name</th>
+				<th>File Size</th>
+				<th>Remove?</th>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr>
+				<th>1</th>
+				<th>Sample Name</th>
+				<th>Sample Size</th>
+				<th><a type='button' class="glyphicon glyphicon-remove"></a></th>
+			</tr>
+			
+		</tbody>
+	</table>
 </div>
