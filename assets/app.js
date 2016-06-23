@@ -13,6 +13,10 @@ var main = function(){
 		$('#upload_files').click();
 	});
 
+	$('tbody').on('click', '.glyphicon-remove',function(){
+		alert('File removed!');
+	});
+
 	$('thead').data('files',[]);
 	$('#upload_files').change(function(){
 		var initial_count = $('thead').data('files').length;
@@ -56,13 +60,11 @@ var main = function(){
 		alert('Call java app! Not implemented yet');
 	});
 
-	$('.glyphicon-remove').click(function(){
-		alert('File removed!');
-	});
+	
 };
 
 function formatBytes(bytes,decimals) {
-   if(bytes == 0) return '0 Byte';
+	if(bytes == 0) return '0 Byte';
    var k = 1000; // or 1024 for binary
    var dm = decimals + 1 || 3;
    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
