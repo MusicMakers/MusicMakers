@@ -2,13 +2,15 @@
 	<form class="">
 		<button class='btn btn-lg btn-default' name="upload_btn"> Pick your muse </button>
 		<input type='file' id='upload_files' multiple="" style="display:none"/>
-		<button class='btn btn-lg btn-default' type='submit' name='upload'> I am done </button>		
+		<button class='btn btn-lg btn-default' type='submit' name='i_am_done'> I am done </button>		
 	</form>
+	<span>
 	<table class="table table-inverse">
 		<thead>
 			<tr>
 				<th>No.</th>
 				<th>File Name</th>
+				<th>File Type</th>
 				<th>File Size</th>
 				<th>Remove?</th>
 			</tr>
@@ -16,12 +18,9 @@
 		</thead>
 		<tbody>
 			<tr>
-				<th>1</th>
-				<th>Sample Name</th>
-				<th>Sample Size</th>
-				<th><a type='button' class="glyphicon glyphicon-remove"></a></th>
-			</tr>
-			
+				<td><a type='button' class="glyphicon glyphicon-remove"></a></td>
+			</tr>			
 		</tbody>
 	</table>
+	</span>
 </div>
