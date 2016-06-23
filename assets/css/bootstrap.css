@@ -338,6 +338,7 @@ th {
 }
 .glyphicon-remove:before {
   content: "\e014";
+  cursor: pointer;
 }
 .glyphicon-zoom-in:before {
   content: "\e015";
@@ -2259,7 +2260,7 @@ caption {
   text-align: left;
 }
 th {
-  text-align: left;
+  text-align: middle;
 }
 .table {
   width: 100%;
