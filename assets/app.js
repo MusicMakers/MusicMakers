@@ -10,28 +10,33 @@ var main = function(){
 	});
 
 	$('button[name="upload_btn"]').click(function(){
-		$('#upload_files').click();
+		$("input[name='upload_files']").click();
 	});
 
+	// Using .on() instead of .click() as this allows jQuery binding to newly added dom elements
 	$('tbody').on('click', '.glyphicon-remove',function(){
 		alert('File removed!');
+		console.log(this.closest('tr').remove());
 	});
 
+	// To store the uploaded files
 	$('thead').data('files',[]);
-	$('#upload_files').change(function(){
+	
+	// Once done uploading load the files information up into the display list
+	$("input[name='upload_files']").change(function(){
 		var initial_count = $('thead').data('files').length;
 		var allowedFileTypes = [];
-		var files = $('#upload_files')[0].files;
+		var files = $("input[name='upload_files']")[0].files;
 
-		for(var i =0; i<files.length; i++){
-			$('thead').data('files').push(files[i]);
-		};
+		// for(var i =0; i<files.length; i++){
+		// 	$('thead').data('files').push(files[i]);
+		// };
 
-		files = $('thead').data('files');
+		// files = $('thead').data('files');
 
 		for(var i = initial_count; i<files.length; i++){
 			var index = $(document.createElement('td'));
-			index.html(initial_count+1);
+			index.html(i+1);
 			var file_name = $(document.createElement('td'));
 			file_name.html(files[i].name);
 			var file_type = $(document.createElement('td'));
@@ -51,17 +56,72 @@ var main = function(){
 			row.append(remove_btn);
 			$('tbody').append(row);
 		};
-		console.log('files.length= '+$('#upload_files')[0].files.length);
-		//$('#upload_files').closest('form').reset();
-		console.log('files.length= '+$('#upload_files')[0].files.length);
 	});
+
 
 	$('button[name="i_am_done"]').click(function(){
-		alert('Call java app! Not implemented yet');
+		document.cookie = "fileDownload=true; path=/";	
+		var $form = $(this).closest('form');
+		var form = $form[0];
+		console.log(form);
+		var formdata = new FormData(form);
+		console.log(formdata);
+		$.ajax({
+			url: $form.attr('action'),
+			type: 'POST',
+			data: formdata,
+			processData: false,
+			contentType: false,
+			success: waitforresponse()
+		});
+
+		function waitforresponse() {
+			
+			$('div[name="uploader"]').hide();
+			$('img[name="loading_spinner"]').show();
+			
+			provideDownloadLink();
+		}
+
+		function provideDownloadLink() {
+			console.log('pass1');
+			var file_name = 'generated_song_1.mid';
+			$('a[name="download_link"]').attr('href', file_name);
+			$('img[name="loading_spinner"]').hide();
+			$('button[name="download_btn"]').show();
+			console.log('pass2');
+		}
+
 	});
 
-	
+
+	// Copied and pasted from http://jqueryfiledownload.apphb.com/
+	$('button[name="download_btn"]').click(function(){
+		$("a.fileDownloadCustomRichExperience").click();
+	});
+	$(document).on("click", "a.fileDownloadCustomRichExperience", function() {
+
+		var $preparingFileModal = $("#preparing-file-modal");
+
+		$preparingFileModal.dialog({ modal: true });
+
+		$.fileDownload($(this).attr('href'), {
+			successCallback: function(url) {
+
+				$preparingFileModal.dialog('close');
+			},
+			failCallback: function(responseHtml, url) {
+
+				$preparingFileModal.dialog('close');
+				$("#error-modal").dialog({ modal: true });
+			}
+		});
+        return false; //this is critical to stop the click event which will trigger a normal file download!
+    });
+	// end of Copied and pasted from http://jqueryfiledownload.apphb.com/
 };
+
+
 
 function formatBytes(bytes,decimals) {
 	if(bytes == 0) return '0 Byte';
