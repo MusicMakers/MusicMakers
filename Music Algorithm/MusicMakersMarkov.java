@@ -46,24 +46,30 @@ public class MusicMakersMarkov {
 		 */
 		public void createHTable() {
 			System.out.println("Preparing Hash Table");
-			for (int i=0; i<m_audioFile.length; i++) {
+			boolean done = false;
+			int i = 0;
+			while (i<m_audioFile.length) {
 //				if (m_audioFile[i] == (float) 0.0 || m_audioFile[i+1] == (float) 0.0){
 //					System.out.println("i: " + i );
 //					continue;
 //				}
+				if (done){
+					 break;
+				 }
 				// taking a portion of audio data of a particular order
 				for (int j=i; j<m_order+i; j++){
+					if (m_order + 1 + j == m_audioFile.length) {
+						done = true;
+						break;
+					}
 					sub.add(m_audioFile[j]);
+					// take the next audio data
+					next.add(m_audioFile[m_order+j]);
 //					System.out.println("i: " + i );
 //					System.out.println("j: " + j );
 				}
 //				System.out.println(sub.toString());
-				// take the next audio data
-				for (int k=m_order+i; k<m_order+m_order+i; k++){
-					next.add(m_audioFile[k]);
-//					System.out.println("i: " + i );
-//					System.out.println("j: " + j );
-				}
+				 
 				// if the hashtable does not contain the portion of audio data, put it in the hashtable as the key
 				// Add the next audio data as the value
 				if (!hash.containsKey((sub))) {
@@ -82,6 +88,7 @@ public class MusicMakersMarkov {
 				values.add(next);
 				sub.clear();
 				next.clear();
+				i += m_order;
 //				System.out.println("i: " + i);
 			}
 		}

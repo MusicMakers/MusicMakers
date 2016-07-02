@@ -19,7 +19,7 @@ public class MusicCreator {
 		try{
 			file = new AudioFileIn(fileName);
 			audioFile = Read.audio(fileName);
-			m_order = 10000;
+			m_order = 1000000;
 			numChars = audioFile.length;
 			System.out.println(numChars);
 		}
