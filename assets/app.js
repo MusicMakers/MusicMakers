@@ -85,7 +85,7 @@ var main = function(){
 
 		function provideDownloadLink() {
 			console.log('pass1');
-			var file_name = 'generated_song_1.mid';
+			var file_name = 'Second attempt.mid';
 			$('a[name="download_link"]').attr('href', file_name);
 			$('img[name="loading_spinner"]').hide();
 			$('button[name="download_btn"]').show();
