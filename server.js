@@ -26,6 +26,8 @@ app.use(express.static(__dirname + '/downloads'));
 app.use(express.static(__dirname+'/node_modules/jquery/dist'));
 app.use(express.static(__dirname+'/node_modules/jquery-file-download/src/scripts'));
 
-var server = app.listen(3000,function(){
-	console.log("We have started our server on port 3000: accessed it by localhost:3000")
+app.set('port', (process.env.PORT || 3000));
+
+var server = app.listen(app.get('port'),function(){
+	console.log("We have started our server on port " + app.get('port'))
 });

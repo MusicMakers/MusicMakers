@@ -7,11 +7,9 @@ module.exports = function(app){
 	app.get('/',function(req,res){
 		var sess = req.session;
 		if(!sess.id){
-			console.log("first: "+sess.id);
 			sess.id = uid.sync(18);
 
 		}
-		console.log("2nd: "+sess.id);
 		res.render('index');
 	});
 	app.post('/', upload.array('upload_files'), function(req, res){
