@@ -1,5 +1,3 @@
-package jMusicTest;
-
 // This second attempt is a success! However, its input and output is limited to midi files
 
 import java.util.*;
@@ -46,7 +44,7 @@ public class MidiMusicCreator implements JMC {
 	
 	public void process(Sequence s) throws Exception{
 		// -1 because the first track is not useful (at least at the moment)
-		int numTracks = s.getTracks().length;
+//		int numTracks = s.getTracks().length;
 			Track track = s.getTracks()[1];
 			for(int i=0; i<track.size(); i++){
 				MidiEvent event = track.get(i);
@@ -201,15 +199,26 @@ public class MidiMusicCreator implements JMC {
 		part.addPhrase(phrase);
 		scr.addPart(part);
 		scr.setTempo(tempo);
-		Write.midi(scr, "Second Attempt.mid");
+		String filename = "Second Attempt.mid";
+		Write.midi(scr, filename);
+		System.out.println(filename);
 	}
 	
 	public static void main(String[] args) throws Exception {		
 		// filename, Markov Order
+		if (args.length>0) {
+			String filename = args[0];
+			MidiMusicCreator t = new MidiMusicCreator(filename,2);
+//			 numNotes, tempo
+			t.generateMusic(100,100);
+		}
+		else {
+			throw new Exception("There are no inputs");
+		}
 		
-		MidiMusicCreator t = new MidiMusicCreator("brahms-lullaby-wiegenlied.mid",2);
-//		 numNotes, tempo
-		t.generateMusic(100,100);
+
+		
 		
  }
 }
+
