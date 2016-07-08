@@ -1,19 +1,24 @@
 var express = require('express');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var cookieSession = require('cookie-session')
+var bodyParser  = require('body-parser');
 
 var app = express();
 
+app.use(cookieSession({
+	name: "MMcookie",
+	secret: '$#%!@#@@#SSDASASDVV@@@@', 
+	maxAge: 600000
+}));
 
-require('./router/main')(app);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+
 app.set('views', __dirname+'/views');
 app.set('view engine','ejs');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(cookieParser());
-app.use(session({ secret: '$#%!@#@@#SSDASASDVV@@@@', key: 'sid'}));
-
+require('./router/main')(app);
 
 // Serving these file up to server
 app.use(express.static(__dirname + '/assets'));

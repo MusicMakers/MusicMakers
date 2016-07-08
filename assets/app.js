@@ -72,24 +72,21 @@ var main = function(){
 			data: formdata,
 			processData: false,
 			contentType: false,
-			success: waitforresponse()
+			success: waitforresponse
 		});
 
-		function waitforresponse() {
+		function waitforresponse(id) {
 			
 			$('div[name="uploader"]').hide();
 			$('img[name="loading_spinner"]').show();
-			
-			provideDownloadLink();
+			provideDownloadLink(id);
 		}
 
-		function provideDownloadLink() {
-			console.log('pass1');
-			var file_name = 'Second attempt.mid';
+		function provideDownloadLink(id) {
+			var file_name = id + '.mid';
 			$('a[name="download_link"]').attr('href', file_name);
 			$('img[name="loading_spinner"]').hide();
 			$('button[name="download_btn"]').show();
-			console.log('pass2');
 		}
 
 	});
