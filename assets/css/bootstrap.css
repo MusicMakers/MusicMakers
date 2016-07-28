@@ -6760,3 +6760,8 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.smalltextfield{
+  color: #000;
+  width: 30px;
+}

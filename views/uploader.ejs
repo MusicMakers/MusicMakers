@@ -1,8 +1,13 @@
 <div name ="uploader" style="display:none">
 	<form role='form' action='/' method='post' enctype='multipart/form-data'>
 		<button class='btn btn-lg btn-default' name="upload_btn"> Pick your muse </button>
-		<input type='file' name='upload_files' multiple="" style="display:none"/>
+		<input type='file' name='upload_files' multiple="" style="display:none" />
 		<button type="submit" class='btn btn-lg btn-default' name='i_am_done'> I am done </button>
+		<br>
+		<br>
+		Order: <input type='text' name="order" class="smalltextfield" maxlength="2"/>
+		Number of notes: <input type="text" name="num_of_notes" class="smalltextfield" maxlength="2"/>
+		Tempo: <input type="text" name="tempo" class="smalltextfield" maxlength="2"/>
 	</form>	
 	<!--
 	<input type='file' name='imports' multiple="" value=null style="display:none"/>
@@ -15,7 +20,6 @@
 					<th>File Name</th>
 					<th>File Type</th>
 					<th>File Size</th>
-					<th>Remove?</th>
 				</tr>
 
 			</thead>
