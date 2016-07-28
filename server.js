@@ -24,7 +24,7 @@ require('./router/main')(app);
 app.use(express.static(__dirname + '/assets'));
 app.use(express.static(__dirname + '/downloads'));
 app.use(express.static(__dirname+'/node_modules'));
-app.use(express.static(__dirname+'/node_modules'));
+
 
 app.set('port', (process.env.PORT || 3000));
 
