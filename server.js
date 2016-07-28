@@ -23,7 +23,7 @@ require('./router/main')(app);
 // Serving these file up to server
 app.use(express.static(__dirname + '/assets'));
 app.use(express.static(__dirname + '/downloads'));
-app.use(express.static(__dirname+'/node_modules/jquery/dist'));
+// app.use(express.static(__dirname+'/node_modules/jquery/dist'));
 app.use(express.static(__dirname+'/node_modules/jquery-file-download/src/scripts'));
 
 app.set('port', (process.env.PORT || 3000));
