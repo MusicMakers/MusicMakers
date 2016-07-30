@@ -1,5 +1,5 @@
 var multer = require('multer');
-var upload = multer({dest: './imports'});
+var upload = multer({dest: '__dirname/../imports'});
 var fs = require('fs');
 var uid = require('uid-safe');
 
@@ -17,7 +17,7 @@ module.exports = function(app){
 		var spawn = require('child_process').spawn;
 		var cmd = "java" ;
 		var num_of_files = req.files.length;		
-		var args = ["-jar",__dirname+"/../applications/MM improved.jar"];
+		var args = ["-jar",__dirname+"/../applications/MM Improved.jar"];
 		args.push(req.body.order, req.body.num_of_notes, req.body.tempo); //preferences: order, num_of_notes, tempo
 		args.push(sess.id+".mid");
 		args.push(num_of_files);
