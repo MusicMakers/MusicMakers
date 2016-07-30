@@ -1,4 +1,8 @@
 <div name ="uploader" style="display:none">
+	<div>
+	<!-- Hold onto "Ctrl" button to select multiple midi files.<br> -->
+	As of now our program can only accept one file as input.<br>
+	</div>
 	<form role='form' action='/' method='post' enctype='multipart/form-data'>
 		<button class='btn btn-lg btn-default' name="upload_btn"> Pick your muse </button>
 		<input type='file' name='upload_files' multiple="" style="display:none" />
@@ -9,9 +13,6 @@
 		Number of notes: <input type="text" name="num_of_notes" class="smalltextfield" maxlength="2"/>
 		Tempo: <input type="text" name="tempo" class="smalltextfield" maxlength="2"/>
 	</form>	
-	<!--
-	<input type='file' name='imports' multiple="" value=null style="display:none"/>
-	-->
 	<span>
 		<table class="table table-inverse">
 			<thead>
