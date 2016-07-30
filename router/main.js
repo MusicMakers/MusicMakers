@@ -25,9 +25,9 @@ module.exports = function(app){
 			var loc = __dirname+"/../"+req.files[i].path
 			args.push(loc);
 		}
-		console.log(args);
 		var options = {cwd: __dirname+"/../downloads"};
 		var child = spawn(cmd,args,options);
+		console.log(child);
 		res.send(sess.id);
 	});
 };
