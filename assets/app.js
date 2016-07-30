@@ -51,16 +51,17 @@ var main = function(){
 		document.cookie = "fileDownload=true; path=/";	
 		var $form = $(this).closest('form');
 		var form = $form[0];
-		var formdata = new FormData(form);
-		$.ajax({
-			url: $form.attr('action'),
-			type: 'POST',
-			data: formdata,
-			processData: false,
-			contentType: false,
-			success: waitforresponse
-		});
-
+		if(form.checkValidity()){
+			var formdata = new FormData(form);
+			$.ajax({
+				url: $form.attr('action'),
+				type: 'POST',
+				data: formdata,
+				processData: false,
+				contentType: false,
+				success: waitforresponse
+			});
+		}
 		function waitforresponse(id) {
 			
 			$('div[name="uploader"]').hide();
@@ -74,7 +75,6 @@ var main = function(){
 			$('img[name="loading_spinner"]').hide();
 			$('button[name="download_btn"]').show();
 		}
-
 	});
 
 
