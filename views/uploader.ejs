@@ -1,17 +1,19 @@
 <div name ="uploader" style="display:none">
 	<div>
-	<!-- Hold onto "Ctrl" button to select multiple midi files.<br> -->
-	As of now our program can only accept one file as input.<br>
+	Hold onto "Ctrl" button to select multiple midi files.<br>
+	Order, Number of notes and Tempo: each of them has to be more than 1.<br>
+	<br>
+	<!-- As of now our program can only accept one file as input.<br> -->
 	</div>
 	<form role='form' action='/' method='post' enctype='multipart/form-data'>
 		<button class='btn btn-lg btn-default' name="upload_btn"> Pick your muse </button>
-		<input type='file' name='upload_files' multiple="" style="display:none" />
+		<input type='file' name='upload_files' multiple="" style="display:none" required/>
 		<button type="submit" class='btn btn-lg btn-default' name='i_am_done'> I am done </button>
 		<br>
 		<br>
-		Order: <input type='text' name="order" class="smalltextfield" maxlength="2"/>
-		Number of notes: <input type="text" name="num_of_notes" class="smalltextfield" maxlength="2"/>
-		Tempo: <input type="text" name="tempo" class="smalltextfield" maxlength="2"/>
+		Order: <input type='number' name="order" class="smalltextfield" maxlength="2" min="1" step="1"/>
+		Number of notes: <input type="number" name="num_of_notes" class="smalltextfield" maxlength="2" min="1" step="1"/>
+		Tempo: <input type="number" name="tempo" class="smalltextfield" maxlength="2" min="1" step="1"/>
 	</form>	
 	<span>
 		<table class="table table-inverse">
