@@ -19,16 +19,12 @@ var main = function(){
 		console.log(this.closest('tr').remove());
 	});
 
-	// To store the uploaded files
-	$('thead').data('files',[]);
-	
 	// Once done uploading load the files information up into the display list
 	$("input[name='upload_files']").change(function(){
-		var initial_count = $('thead').data('files').length;
 		var allowedFileTypes = [];
 		var files = $("input[name='upload_files']")[0].files;
 		$('tbody').children().remove();
-		for(var i = initial_count; i<files.length; i++){
+		for(var i = 0; i<files.length; i++){
 			var index = $(document.createElement('td'));
 			index.html(i+1);
 			var file_name = $(document.createElement('td'));
