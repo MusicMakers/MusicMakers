@@ -1,0 +1,17 @@
+{
+  "name": "Express-web-app",
+  "version": "1.0.0",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-session": "^2.0.0-alpha.1",
+    "ejs": "^2.4.2",
+    "express": "~4.0.0",
+    "express-session": "^1.13.0",
+    "fs": "0.0.2",
+    "jquery": "^2.2.4",
+    "jquery-file-download": "^1.4.5",
+    "morgan": "^1.7.0",
+    "multer": "^1.1.0",
+    "uid-safe": "^2.1.1"
+  }
+}
